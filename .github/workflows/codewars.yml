@@ -24,6 +24,10 @@ jobs:
           echo "Application name ${{ env.APPLICATION_NAME }}"
       - name: List current folder
         run: ls -la
+      - name: Git clone codewars repository
+        uses: actions/checkout@v1
+      - name: List current folder
+        run: ls -la
 
   test:
     runs-on: ubuntu-latest
