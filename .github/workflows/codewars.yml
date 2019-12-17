@@ -41,7 +41,7 @@ jobs:
       - name: Print Env Test Job Vars
         run: |
           echo "TEST JOB Var - ${{ env.VAR1 }}"
-          echo "TEST JOB Var - VAR2 }}"
+          echo "TEST JOB Var - VAR2"
         env:
           VAR2: "THIS IS LOCAL VARIABLE FROM STEP"
       - name: Test Package
