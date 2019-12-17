@@ -32,9 +32,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: [build]
+    env:
+      VAR1: "THIS IS LOCAL VARIABLE FROM TEST JOB"
 
     steps:
       - name: Print Hello Message
         run: echo "Hello, world from test!"
+      - name: Print Env Test Job Vars
+        run: |
+          echo "TEST JOB Var - ${{ env.VAR1 }}"
+          echo "TEST JOB Var - VAR2 }}"
+        env:
+          VAR2: "THIS IS LOCAL VARIABLE FROM STEP"
       - name: Test Package
         run: echo "Test Package ${{ env.PACKAGE }}"
