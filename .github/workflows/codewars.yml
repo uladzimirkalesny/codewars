@@ -1,10 +1,13 @@
 # GitHub learn Actions
 # Test comment - Basics actions
 name: codewars-examples
+env:
+  APPLICATION_NAME: "CODEWARS"
+  PACKAGE: "CODEWARS ver-${{ github.sha }}"
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -12,13 +15,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print Hello Message
-      run: echo "Hello, world! from build"
-        
+      - name: Print Hello Message
+        run: echo "Hello, world! from build"
+      - name: Execute few commands
+        run: |
+          echo "Hello Message 1"
+          echo "Hello Message 2"
+          echo "Application name ${{ env.APPLICATION_NAME }}"
+
   test:
     runs-on: ubuntu-latest
     needs: [build]
-    
+
     steps:
-    - name: Print Hello Message
-      run: echo "Hello, world from test!"
+      - name: Print Hello Message
+        run: echo "Hello, world from test!"
+      - name: Test Package
+        run: echod "Test Package ${{ env.PACKAGE }}"
