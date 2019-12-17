@@ -31,4 +31,4 @@ jobs:
       - name: Print Hello Message
         run: echo "Hello, world from test!"
       - name: Test Package
-        run: echod "Test Package ${{ env.PACKAGE }}"
+        run: echo "Test Package ${{ env.PACKAGE }}"
