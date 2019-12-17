@@ -1,0 +1,23 @@
+# GitHub learn Actions
+# Test comment - Basics actions
+name: codewars-examples
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, world! from build"
+        
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello, world from test!"
