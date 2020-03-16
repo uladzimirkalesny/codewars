@@ -14,3 +14,7 @@ For example:
 
  persistence(4) == 0 // because 4 is already a one-digit number
 ################################
+Package: findOdd
+Given an array, find the integer that appears an odd number of times.
+There will always be only one integer that appears an odd number of times.
+################################
